@@ -1,5 +1,10 @@
 
-This file provides the details of run_analysis.r script. I've split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions.
+This project is part of the John Hopkins 'Getting and Cleaning Data' Coursera module. We have used the Human Activity Recognition Using Smartphones Data Set, a database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+
+This file provides the details of run_analysis.r script. I've split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions. You can also find codeBook.txt which provides more details on header naming conventions used. 
 
 ### Part 1 - Reading the data
 

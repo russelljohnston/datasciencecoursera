@@ -61,7 +61,9 @@ img {
 
 
 
-<p>This file provides the details of run_analysis.r script. I’ve split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions.</p>
+<p>This project is part of the John Hopkins ‘Getting and Cleaning Data’ Coursera module. We have used the Human Activity Recognition Using Smartphones Data Set, a database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.</p>
+<p><a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" class="uri">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a></p>
+<p>This file provides the details of run_analysis.r script. I’ve split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions. You can also find codeBook.txt which provides more details on header naming conventions used.</p>
 <div id="part-1---reading-the-data" class="section level3">
 <h3>Part 1 - Reading the data</h3>
 <p>The first part of the code reads in the following data files from into data frames. All files can be found in /data directory.</p>
@@ -140,7 +142,6 @@ img {
 <pre class="r"><code>groupby()
 summarise()</code></pre>
 <p>to compute the average quantaise grouped by subject and activity and wrote the tidied dataframe, ‘tidyDF’ to a file called ‘tidyData.txt’.</p>
-<p>This new data frame is called ‘Averages’</p>
 </div>
 
 
