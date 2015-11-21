@@ -1,0 +1,22 @@
+---
+title: "Readme"
+output: html_document
+---
+
+This file provides the details of run_analysis.r script
+
+### Part 1 - Reading the data
+
+The first part of the code reads in the following data files from  'test' and 'train' into data frames: 
+
+Data set | Data Frame
+------------- | -------------
+X_test.txt | test_xDF
+subject_test.txt | sub_testDF
+y_test.txt | test_yDF
+X_train.txt | train_xDF
+subject_train.txt | sub_trainDF
+y_train.txt | train_yDF
+
+
+

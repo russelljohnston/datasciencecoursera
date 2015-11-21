@@ -38,7 +38,7 @@ JoinedData <- cbind(trainJoin,testJoin)
 
 extract <- JoinedData[c(1:6, 41:46, 81:86, 121:126, 161:166, 201:202, 214:215, 227:228, 240:241, 253:254, 266:271, 345:350, 424:429, 503:504, 516:517, 529:530, 542:543)]
 
-
+extractS<-testJoin[,grepl("mean()$", colnames(testJoin)) | grepl("^std()$", colnames(testJoin))]
 
 
 
