@@ -1,0 +1,108 @@
+This document details the key data frames created in run_analysis.R
+as well as the naming convention applied to the final output data
+file 'tidyData.txt'
+
+Key Data Frames:
+
+MergeData = The raw merged data for the test and train datasets i.e. 
+	    X_test.txt, subject_test.txt,y_test.txt, X_train.txt,
+	    subject_train and y_train.txt. Also contains a column of the
+	    activity labels e.g. WALKING, LAYING etc... This data frame
+ 	    has a header, but in its 'raw' state - i.e. not tidied. 
+	    A total of 564 columns
+
+MeanStd   = A table extracting the mean and standard deviation columns 
+	    from MergeData that contain 'mean()'  and 'std()' patterns.
+            Also contains 2 extra columns - subject and activity labels.
+	    A total of 68 columns. 
+
+
+tidyDF    = Long and narrow data frame that contains the computed averages
+	    of MeanStd grouped by subject and activity label. When the code
+	    completes, it writes this table to a file called 'tidyData.txt'.
+
+
+Naming Convention For Header:
+
+In both MeanStd and tidyDF we have applied the following formatting to column
+labels. The features are labelled as follows:
+
+acc  = accelerometer
+gyro = gyroscope
+jerk = jerk signals
+
+a label with prefixed with a 't' denotes time
+a label with prefixed with a 'f' denotes frequency domain signal
+
+'x', 'y', and 'z' appearing at the end of  a column label 
+denote 3-axial signals in the X, Y and Z directions.
+----------------------------------------------------
+tbodyaccmeanx	
+tbodyaccmeany	
+tbodyaccmeanz	
+tbodyaccstandarddeviationx	
+tbodyaccstandarddeviationy	
+tbodyaccstandarddeviationz	
+tgravityaccmeanx
+tgravityaccmeany
+tgravityaccmeanz
+tgravityaccstandarddeviationx	
+tgravityaccstandarddeviationy	
+tgravityaccstandarddeviationz	
+tbodyaccjerkmeanx	
+tbodyaccjerkmeany	
+tbodyaccjerkmeanz	
+tbodyaccjerkstandarddeviationx	
+tbodyaccjerkstandarddeviationy	
+tbodyaccjerkstandarddeviationz	
+tbodygyromeanx	
+tbodygyromeany	
+tbodygyromeanz	
+tbodygyrostandarddeviationx	
+tbodygyrostandarddeviationy	
+tbodygyrostandarddeviationz	
+tbodygyrojerkmeanx	
+tbodygyrojerkmeany	
+tbodygyrojerkmeanz	
+tbodygyrojerkstandarddeviationx	
+tbodygyrojerkstandarddeviationy	
+tbodygyrojerkstandarddeviationz	
+tbodyaccmagmean	
+tbodyaccmagstandarddeviation	
+tgravityaccmagmean	
+tgravityaccmagstandarddeviation
+tbodyaccjerkmagmean	
+tbodyaccjerkmagstandarddeviation
+tbodygyromagmean	
+tbodygyromagstandarddeviation	
+tbodygyrojerkmagmean	
+tbodygyrojerkmagstandarddeviation
+fbodyaccmeanx	
+fbodyaccmeany	
+fbodyaccmeanz	
+fbodyaccstandarddeviationx	
+fbodyaccstandarddeviationy	
+fbodyaccstandarddeviationz	
+fbodyaccjerkmeanx	
+fbodyaccjerkmeany	
+fbodyaccjerkmeanz	
+fbodyaccjerkstandarddeviationx	
+fbodyaccjerkstandarddeviationy	
+fbodyaccjerkstandarddeviationz	
+fbodygyromeanx	
+fbodygyromeany	
+fbodygyromeanz	
+fbodygyrostandarddeviationx	
+fbodygyrostandarddeviationy	
+fbodygyrostandarddeviationz	
+fbodyaccmagmean	
+fbodyaccmagstandarddeviation	
+fbodybodyaccjerkmagmean	
+fbodybodyaccjerkmagstandarddeviation
+fbodybodygyromagmean	
+fbodybodygyromagstandarddeviation
+fbodybodygyrojerkmagmean	
+fbodybodygyrojerkmagstandarddeviation
+
+
+

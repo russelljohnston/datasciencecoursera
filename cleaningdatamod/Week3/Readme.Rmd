@@ -7,7 +7,7 @@ This file provides the details of run_analysis.r script. I've split this into 7 
 
 ### Part 1 - Reading the data
 
-The first part of the code reads in the following data files from  'test' and 'train' into data frames: 
+The first part of the code reads in the following data files from into data frames. All files can be found in /data directory.
 
 Data set | Data Frame
 ------------- | -------------
@@ -18,11 +18,9 @@ X_train.txt | train_xDF
 subject_train.txt | sub_trainDF
 y_train.txt | train_yDF
 
-### Part 2 - Creating headers  
 
-Next we read in the column labels from 'features.txt' and apply these names to test_xDF and train_yDF. We also create header names for  sub_testDF, test_yDF, sub_trainDF and train_yDF. We will tidy names up later on.
 
-### Part 3 - Merging the data
+### Part 2 - Merging the data
 
 To merge the train and test data frames we use 
 ```{r eval=FALSE} 
@@ -32,10 +30,14 @@ to join all the 'test' data frames (testJoin) and 'train' data frames (trainJoin
 ```{r eval=FALSE} 
 rbind()
 ```
-to merge testJoin and trainJoin data frames in to 'MergedData'.
+to merge testJoin and trainJoin data frames in to 'MergedData' table.
+
+### Part 3 - Creating headers  
+
+Next we read in the column labels from 'features.txt' and apply these to the MergedData table.
 
 ### Part 4 - Extracting mean() and std() columns
-'MeanStd.df' data frame contains all the mean() and std() [standard deviation] columns from MergedData.  This was executed using the 
+'MeanStd' data frame contains all the mean() and std() [standard deviation] columns from MergedData.  This was executed using the 
 ```{r eval=FALSE} 
 grepl() 
 ```
@@ -46,22 +48,30 @@ command being careful to select patterns where
 ```
 This avoided also selecting columns like "...meanfreq()" which dont have a std() counterpart. I think which "mean" columns you select is a bit subjective anyway. 
 
-With this criterion there should be 66 columns in total.
+With this criterion there should be 68 columns in total that include the activity and subject columns.
 
-### Part 5 - Computing the averages 
+Also added is a column containing the activity labels e.g. WALKING, LAYING etc... 
+
+### Part 5 - Tidying the header
+Here we apply some text formatting to the MeanStd header as per guidance from Week 4 lectures:
+
+* Force all labels to be lower case.
+* Removed all '()' charachters.
+* Replaced std with standarddeviation
+* Removed '-' character.
+
+The full description of the column labels can be found in CodeBook.txt file.
+
+
+
+### Part 6 - Computing the averages and writing to file
+
+We used 
 ```{r eval=FALSE} 
-colMeans()
+groupby()
+summarise()
 ```
-was used to compute the average column values across the MeanStd.df data frame from Part 4. 
+to compute the average quantaise grouped by subject and activity and wrote the tidied dataframe, 'tidyDF' to a file called 'tidyData.txt'.
 
 This new data frame is called 'Averages'
 
-### Part 6 - Tidying the header
-Here we apply some text formatting to the Averages header as per guidance from Week 4 lectures:
-
-* Checked for duplicate column names (none found)
-* Force all labels to be lower case.
-* Removed all '()' charachters.
-* I chose not to remove '-' characters as I think keeping them in makes the labels easier to read when you want to quickly scan them.
-
-The full description of the column labels can be found in CodeBook.txt file.

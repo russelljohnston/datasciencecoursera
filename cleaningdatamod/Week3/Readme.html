@@ -67,7 +67,7 @@ img {
 <p>This file provides the details of run_analysis.r script. I’ve split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions.</p>
 <div id="part-1---reading-the-data" class="section level3">
 <h3>Part 1 - Reading the data</h3>
-<p>The first part of the code reads in the following data files from ‘test’ and ‘train’ into data frames:</p>
+<p>The first part of the code reads in the following data files from into data frames. All files can be found in /data directory.</p>
 <table>
 <thead>
 <tr class="header">
@@ -103,44 +103,47 @@ img {
 </tbody>
 </table>
 </div>
-<div id="part-2---creating-headers" class="section level3">
-<h3>Part 2 - Creating headers</h3>
-<p>Next we read in the column labels from ‘features.txt’ and apply these names to test_xDF and train_yDF. We also create header names for sub_testDF, test_yDF, sub_trainDF and train_yDF. We will tidy names up later on.</p>
-</div>
-<div id="part-3---merging-the-data" class="section level3">
-<h3> Part 3 - Merging the data</h3>
+<div id="part-2---merging-the-data" class="section level3">
+<h3> Part 2 - Merging the data</h3>
 <p>To merge the train and test data frames we use</p>
 <pre class="r"><code>cbind()</code></pre>
 <p>to join all the ‘test’ data frames (testJoin) and ‘train’ data frames (trainJoin). We then use</p>
 <pre class="r"><code>rbind()</code></pre>
-<p>to merge testJoin and trainJoin data frames in to ‘MergedData’.</p>
+<p>to merge testJoin and trainJoin data frames in to ‘MergedData’ table.</p>
+</div>
+<div id="part-3---creating-headers" class="section level3">
+<h3>Part 3 - Creating headers</h3>
+<p>Next we read in the column labels from ‘features.txt’ and apply these to the MergedData table.</p>
 </div>
 <div id="part-4---extracting-mean-and-std-columns" class="section level3">
 <h3>Part 4 - Extracting mean() and std() columns</h3>
-<p>‘MeanStd.df’ data frame contains all the mean() and std() [standard deviation] columns from MergedData. This was executed using the</p>
+<p>‘MeanStd’ data frame contains all the mean() and std() [standard deviation] columns from MergedData. This was executed using the</p>
 <pre class="r"><code>grepl() </code></pre>
 <p>command being careful to select patterns where</p>
 <pre class="r"><code>&quot;mean\\(&quot;
 &quot;std\\(&quot;</code></pre>
 <p>This avoided also selecting columns like “…meanfreq()” which dont have a std() counterpart. I think which “mean” columns you select is a bit subjective anyway.</p>
-<p>There should be 66 columns in total.</p>
+<p>With this criterion there should be 68 columns in total that include the activity and subject columns.</p>
+<p>Also added is a column containing the activity labels e.g. WALKING, LAYING etc…</p>
 </div>
-<div id="part-5---computing-the-averages" class="section level3">
-<h3>Part 5 - Computing the averages</h3>
-<pre class="r"><code>colMeans()</code></pre>
-<p>was used to compute the average column values across the MeanStd.df data frame from Part 4.</p>
-<p>This new data frame is called ‘Averages’</p>
-</div>
-<div id="part-6---tidying-the-header" class="section level3">
-<h3>Part 6 - Tidying the header</h3>
-<p>Here we apply some text formatting to the Averages header as per guidance from Week 4 lectures:</p>
+<div id="part-5---tidying-the-header" class="section level3">
+<h3>Part 5 - Tidying the header</h3>
+<p>Here we apply some text formatting to the MeanStd header as per guidance from Week 4 lectures:</p>
 <ul>
-<li>Checked for duplicate column names (none found)</li>
 <li>Force all labels to be lower case.</li>
 <li>Removed all ‘()’ charachters.</li>
-<li>I chose not to remove ‘-’ characters as I think keeping them in makes the labels easier to read when you want to quickly scan them.</li>
+<li>Replaced std with standarddeviation</li>
+<li>Removed ‘-’ character.</li>
 </ul>
 <p>The full description of the column labels can be found in CodeBook.txt file.</p>
+</div>
+<div id="part-6---computing-the-averages-and-writing-to-file" class="section level3">
+<h3>Part 6 - Computing the averages and writing to file</h3>
+<p>We used</p>
+<pre class="r"><code>groupby()
+summarise()</code></pre>
+<p>to compute the average quantaise grouped by subject and activity and wrote the tidied dataframe, ‘tidyDF’ to a file called ‘tidyData.txt’.</p>
+<p>This new data frame is called ‘Averages’</p>
 </div>
 
 
