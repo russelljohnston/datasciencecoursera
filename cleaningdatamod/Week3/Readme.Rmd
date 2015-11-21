@@ -1,7 +1,3 @@
----
-title: "Readme"
-output: html_document
----
 
 This file provides the details of run_analysis.r script. I've split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions.
 
@@ -22,11 +18,11 @@ y_train.txt | train_yDF
 
 ### Part 2 - Merging the data
 
-To merge the train and test data frames we use 
+To merge the train and test data frames I  use 
 ```{r eval=FALSE} 
 cbind()
 ```
-to join all the 'test' data frames (testJoin) and 'train' data frames (trainJoin). We then use 
+to join all the 'test' data frames (testJoin) and 'train' data frames (trainJoin). I  then use 
 ```{r eval=FALSE} 
 rbind()
 ```
@@ -34,7 +30,7 @@ to merge testJoin and trainJoin data frames in to 'MergedData' table.
 
 ### Part 3 - Creating headers  
 
-Next we read in the column labels from 'features.txt' and apply these to the MergedData table.
+Next I  read in the column labels from 'features.txt' and apply these to the MergedData table.
 
 ### Part 4 - Extracting mean() and std() columns
 'MeanStd' data frame contains all the mean() and std() [standard deviation] columns from MergedData.  This was executed using the 
@@ -53,7 +49,7 @@ With this criterion there should be 68 columns in total that include the activit
 Also added is a column containing the activity labels e.g. WALKING, LAYING etc... 
 
 ### Part 5 - Tidying the header
-Here we apply some text formatting to the MeanStd header as per guidance from Week 4 lectures:
+Here I  applied some text formatting to the MeanStd header as per guidance from Week 4 lectures:
 
 * Force all labels to be lower case.
 * Removed all '()' charachters.
