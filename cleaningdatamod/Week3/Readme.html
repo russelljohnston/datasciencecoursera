@@ -64,7 +64,7 @@ img {
 </div>
 
 
-<p>This file provides the details of run_analysis.r script</p>
+<p>This file provides the details of run_analysis.r script. I’ve split this into 7 parts, which do not necessarily follow the exact order that was detailed in out in the instructions.</p>
 <div id="part-1---reading-the-data" class="section level3">
 <h3>Part 1 - Reading the data</h3>
 <p>The first part of the code reads in the following data files from ‘test’ and ‘train’ into data frames:</p>
@@ -102,6 +102,40 @@ img {
 </tr>
 </tbody>
 </table>
+</div>
+<div id="part-2---creating-headers" class="section level3">
+<h3>Part 2 - Creating headers</h3>
+<p>Next we read in the column labels from ‘features.txt’ and apply these names to test_xDF and train_yDF. We also create header names for sub_testDF, test_yDF, sub_trainDF and train_yDF. We will tidy names up later on.</p>
+</div>
+<div id="part-3---merging-the-data" class="section level3">
+<h3> Part 3 - Merging the data</h3>
+<p>To merge the train and test data frames we use</p>
+<pre class="r"><code>cbind()</code></pre>
+<p>to join all the ‘test’ data frames (testJoin) and ‘train’ data frames (trainJoin). We then use</p>
+<pre class="r"><code>rbind()</code></pre>
+<p>to merge testJoin and trainJoin data frames in to ‘MergedData’.</p>
+</div>
+<div id="part-4---extracting-mean-and-std-columns" class="section level3">
+<h3>Part 4 - Extracting mean() and std() columns</h3>
+<p>‘MeanStd.df’ data frame contains all the mean() and std() [standard deviation] columns from MergedData.</p>
+<p>There should be 66 columns in total.</p>
+</div>
+<div id="part-5---computing-the-averages" class="section level3">
+<h3>Part 5 - Computing the averages</h3>
+<pre class="r"><code>colMeans()</code></pre>
+<p>was used to compute the average column values across the MeanStd.df data frame from Part 4.</p>
+<p>This new data frame is called ‘Averages’</p>
+</div>
+<div id="part-6---tidying-the-header" class="section level3">
+<h3>Part 6 - Tidying the header</h3>
+<p>Here we apply some text formatting to the Averages header as per guidance from Week 4 lectures:</p>
+<ul>
+<li>Checked for duplicate column names (none found)</li>
+<li>Force all labels to be lower case.</li>
+<li>Removed all ‘()’ charachters.</li>
+<li>I chose not to remove ‘-’ characters as I think keeping them in makes the labels easier to read when you want to quickly scan them.</li>
+</ul>
+<p>The full description of the column labels can be found in CodeBook.txt file.</p>
 </div>
 
 
