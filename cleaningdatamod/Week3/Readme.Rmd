@@ -35,9 +35,18 @@ rbind()
 to merge testJoin and trainJoin data frames in to 'MergedData'.
 
 ### Part 4 - Extracting mean() and std() columns
-'MeanStd.df' data frame contains all the mean() and std() [standard deviation] columns from MergedData. 
+'MeanStd.df' data frame contains all the mean() and std() [standard deviation] columns from MergedData.  This was executed using the 
+```{r eval=FALSE} 
+grepl() 
+```
+command being careful to select patterns where 
+```{r eval=FALSE} 
+"mean\\("
+"std\\("
+```
+This avoided also selecting columns like "...meanfreq()" which dont have a std() counterpart. I think which "mean" columns you select is a bit subjective anyway. 
 
-There should be 66 columns in total.
+With this criterion there should be 66 columns in total.
 
 ### Part 5 - Computing the averages 
 ```{r eval=FALSE} 

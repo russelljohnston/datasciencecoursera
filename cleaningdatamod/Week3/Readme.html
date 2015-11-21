@@ -117,7 +117,12 @@ img {
 </div>
 <div id="part-4---extracting-mean-and-std-columns" class="section level3">
 <h3>Part 4 - Extracting mean() and std() columns</h3>
-<p>‘MeanStd.df’ data frame contains all the mean() and std() [standard deviation] columns from MergedData.</p>
+<p>‘MeanStd.df’ data frame contains all the mean() and std() [standard deviation] columns from MergedData. This was executed using the</p>
+<pre class="r"><code>grepl() </code></pre>
+<p>command being careful to select patterns where</p>
+<pre class="r"><code>&quot;mean\\(&quot;
+&quot;std\\(&quot;</code></pre>
+<p>This avoided also selecting columns like “…meanfreq()” which dont have a std() counterpart. I think which “mean” columns you select is a bit subjective anyway.</p>
 <p>There should be 66 columns in total.</p>
 </div>
 <div id="part-5---computing-the-averages" class="section level3">
