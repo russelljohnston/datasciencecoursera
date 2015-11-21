@@ -68,6 +68,3 @@ groupby()
 summarise()
 ```
 to compute the average quantaise grouped by subject and activity and wrote the tidied dataframe, 'tidyDF' to a file called 'tidyData.txt'.
-
-This new data frame is called 'Averages'
-
