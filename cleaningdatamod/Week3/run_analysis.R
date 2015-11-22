@@ -47,6 +47,7 @@ names(MeanStd) <-  names(MeanStd) %>%
   gsub("fb", "frequencyb", .) %>%
   gsub("fg", "frequencyg", .) %>%
   gsub("gyro", "gyroscope", .) %>%
+  gsub("bodybody", "body", .) %>%
   gsub("acc", "accelerometer", .)
 
 #Now computing the mean grouped by subject and activity (label):
