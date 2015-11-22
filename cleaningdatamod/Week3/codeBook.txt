@@ -35,10 +35,13 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+%%%%%%%%
+
+
 
 In both MeanStd and tidyDF we have applied the following formatting to column
 labels. The features are labelled as follows:
-%%%%%%%%
+
 
 Following the tidy data convention, all column labels have been extended such that 
 t = time
@@ -46,6 +49,8 @@ f = frequency
 acc = accelerometer
 gyro = gyroscope
 std  = standarddeviation
+
+as well as characters/spaces removed and text foreced to lower case.
 
 so for example: 
 
