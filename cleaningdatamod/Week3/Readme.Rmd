@@ -59,6 +59,10 @@ Here I  applied some text formatting to the MeanStd header as per guidance from 
 * Force all labels to be lower case.
 * Removed all '()' charachters.
 * Replaced std with standarddeviation
+* Replaced t prefix with time
+* Replaced f prefix with frequency
+* Replaced gyro with gyroscope
+* Replaced acc with accelerometer
 * Removed '-' character.
 
 The full description of the column labels can be found in CodeBook.txt file.

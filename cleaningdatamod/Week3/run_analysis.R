@@ -41,7 +41,13 @@ names(MeanStd) <- tolower(names(MeanStd))
 names(MeanStd) <-  names(MeanStd) %>%
   gsub("\\()", "", .) %>%
   gsub("-", "", .) %>%
-  gsub("std", "standarddeviation", .)
+  gsub("std", "standarddeviation", .) %>%
+  gsub("tb", "timeb", .) %>%
+  gsub("tg", "timeg", .) %>%
+  gsub("fb", "frequencyb", .) %>%
+  gsub("fg", "frequencyg", .) %>%
+  gsub("gyro", "gyroscope", .) %>%
+  gsub("acc", "accelerometer", .)
 
 #Now computing the mean grouped by subject and activity (label):
 tidyDF <- tbl_df(MeanStd) %>%

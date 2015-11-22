@@ -24,85 +24,30 @@ tidyDF    = Long and narrow data frame that contains the computed averages
 
 Naming Convention For Header:
 
+The naming conventions are based on those found in features_info.txt file which states:
+%%%%%%%%
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
 In both MeanStd and tidyDF we have applied the following formatting to column
 labels. The features are labelled as follows:
+%%%%%%%%
 
-acc  = accelerometer
+Following the tidy data convention, all column labels have been extended such that 
+t = time
+f = frequency
+acc = accelerometer
 gyro = gyroscope
-jerk = jerk signals
+std  = standarddeviation
 
-a label with prefixed with a 't' denotes time
-a label with prefixed with a 'f' denotes frequency domain signal
+so for example: 
 
-'x', 'y', and 'z' appearing at the end of  a column label 
-denote 3-axial signals in the X, Y and Z directions.
-----------------------------------------------------
-tbodyaccmeanx	
-tbodyaccmeany	
-tbodyaccmeanz	
-tbodyaccstandarddeviationx	
-tbodyaccstandarddeviationy	
-tbodyaccstandarddeviationz	
-tgravityaccmeanx
-tgravityaccmeany
-tgravityaccmeanz
-tgravityaccstandarddeviationx	
-tgravityaccstandarddeviationy	
-tgravityaccstandarddeviationz	
-tbodyaccjerkmeanx	
-tbodyaccjerkmeany	
-tbodyaccjerkmeanz	
-tbodyaccjerkstandarddeviationx	
-tbodyaccjerkstandarddeviationy	
-tbodyaccjerkstandarddeviationz	
-tbodygyromeanx	
-tbodygyromeany	
-tbodygyromeanz	
-tbodygyrostandarddeviationx	
-tbodygyrostandarddeviationy	
-tbodygyrostandarddeviationz	
-tbodygyrojerkmeanx	
-tbodygyrojerkmeany	
-tbodygyrojerkmeanz	
-tbodygyrojerkstandarddeviationx	
-tbodygyrojerkstandarddeviationy	
-tbodygyrojerkstandarddeviationz	
-tbodyaccmagmean	
-tbodyaccmagstandarddeviation	
-tgravityaccmagmean	
-tgravityaccmagstandarddeviation
-tbodyaccjerkmagmean	
-tbodyaccjerkmagstandarddeviation
-tbodygyromagmean	
-tbodygyromagstandarddeviation	
-tbodygyrojerkmagmean	
-tbodygyrojerkmagstandarddeviation
-fbodyaccmeanx	
-fbodyaccmeany	
-fbodyaccmeanz	
-fbodyaccstandarddeviationx	
-fbodyaccstandarddeviationy	
-fbodyaccstandarddeviationz	
-fbodyaccjerkmeanx	
-fbodyaccjerkmeany	
-fbodyaccjerkmeanz	
-fbodyaccjerkstandarddeviationx	
-fbodyaccjerkstandarddeviationy	
-fbodyaccjerkstandarddeviationz	
-fbodygyromeanx	
-fbodygyromeany	
-fbodygyromeanz	
-fbodygyrostandarddeviationx	
-fbodygyrostandarddeviationy	
-fbodygyrostandarddeviationz	
-fbodyaccmagmean	
-fbodyaccmagstandarddeviation	
-fbodybodyaccjerkmagmean	
-fbodybodyaccjerkmagstandarddeviation
-fbodybodygyromagmean	
-fbodybodygyromagstandarddeviation
-fbodybodygyrojerkmagmean	
-fbodybodygyrojerkmagstandarddeviation
+ “tBodyAcc-std-XYZ” is now “timebodyaccelerometerstandarddeviationxyz”
 
-
-
+ 
