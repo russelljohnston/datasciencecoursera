@@ -1,17 +1,17 @@
 library(dplyr)
 library(tidyr)
 
-#Reading from dir data/ into dataframes
-test_xDF <-   read.table("data/X_test.txt",header=FALSE,quote="")
-test_yDF <-   read.table("data/y_test.txt",header=FALSE,quote="")
-sub_testDF <- read.table("data/subject_test.txt",header=FALSE,quote="")
+#Reading into dataframes
+test_xDF <-   read.table("UCI HAR Dataset/test/X_test.txt",header=FALSE,quote="")
+test_yDF <-   read.table("UCI HAR Dataset/test/y_test.txt",header=FALSE,quote="")
+sub_testDF <- read.table("UCI HAR Dataset/test/subject_test.txt",header=FALSE,quote="")
 
-activity_labels <- read.table("data/activity_labels.txt",header=FALSE)
+activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt",header=FALSE)
 names(activity_labels) <- c("activity","label")
 
-train_xDF <-   read.table("data/X_train.txt",header=FALSE,quote="")
-train_yDF <-   read.table("data/y_train.txt",header=FALSE,quote="")
-sub_trainDF <- read.table("data/subject_train.txt",header=FALSE,quote="")
+train_xDF <-   read.table("UCI HAR Dataset/train/X_train.txt",header=FALSE,quote="")
+train_yDF <-   read.table("UCI HAR Dataset/train/y_train.txt",header=FALSE,quote="")
+sub_trainDF <- read.table("UCI HAR Dataset/train/subject_train.txt",header=FALSE,quote="")
 
 #Merging  DATA SETS
 testJoin <- cbind(test_yDF,sub_testDF,test_xDF)
@@ -19,7 +19,7 @@ trainJoin <- cbind(train_yDF,sub_trainDF,train_xDF)
 MergedData <- rbind(testJoin, trainJoin)
 
 #Adding header 
-labels <- read.table("data/features.txt",header=FALSE)
+labels <- read.table("UCI HAR Dataset/features.txt",header=FALSE)
 labels.T <- t(labels[c(2)])
 names(test_xDF) <- labels.T
 names(MergedData) <- c("activity","subject",labels.T)
