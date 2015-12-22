@@ -1,0 +1,56 @@
+---
+title: "Property Search In London"
+author: Russell Johnston
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Thining of moving to London, UK? Not sure where to live or what kind of commute you will have to do? This little app uses the property site [zoopla](http://www.zoopla.co.uk) with google to help you find the ideal suburb that balances rental prices with commuting times.
+
+
+## Part 1 - Finding  Rental Property Information
+
+When you first launch this app you will be presented with the `rent` tab and a series of fields to fill in on the left hand side bar.
+
+- `Area interested in`: In this field you will see the default is set to 'Watford, England'. This can be changed to any area/town/village/postcode. Users should note there is no autocomplete function in this version so you will have to be a little careful with your spelling!
+
+- `Search Radius`: Allows you do select how large an area you want to search around your input location. Units are in miles and the default is set to 1 mile. The maxium radius allowed is 40 miles.
+
+- `Min Price` and `Max Price`: Select your price range here. Currency is in £ and is based on per calandar month (pcm). You will see the defaults are set between £500 and £2250 for demonstrative purposes. 
+
+- `Property Type`: Select between `houses` or `flats` (apartments).
+
+- `Min Beds` and `Max Beds`: Select a range of the number of bedrooms you are interested in. Maximum is 5 bedrooms.
+
+- Finally selected between `unfurnished` and `furnished` properties.
+
+- `Fetch Properties`: Once you have filled in all the above fields, click on this button to send your query to [zoopla](http://www.zoopla.co.uk). Any time you make any changes to any of the fields you will have to click this button to get new results.
+
+The results will be summarised on three different plots: 
+
+1. A table showing our computed averages (mean) and the medians (peak) property prices for a given number of bedrooms.
+2. A density plot showing the distribution of prices.
+3. A Google Maps plot showing pinpoints of the all the properties returned from [zoopla](http://www.zoopla.co.uk). Note, by clicking on any of the pins open up a new webpage showing the details of a given property on [zoopla](http://www.zoopla.co.uk).
+
+
+## Part 2 - Calculating Commuting Times
+
+Once you have completed Part 1, click on the `Commuting` tab. You will see that four fields to complete to compute transit times. These transit times are queried from Google Maps and are based only on commuters who use trains or the underground. 
+
+- `Origin`: You will see that the default start location is the place you entered in the `Area interested in` field from Step 1. You can change this if you prefer. Google will search for train stations around this location.
+- `Destination`: This is generally for the station/area you may be commuting to and you can see the default is set to `Farringdon` station which is in central london. This is just for demonstration purposes and can be changed. 
+- `Search Radius`: Units are in miles will scan for a range of statoins within in this radius.
+
+- `Departure Time`: To get a more accurate estimate of your commute, you can select  a departure time here. Clearly, there may be faster trains during rush hour. The default is set to 07:00 hrs (7 am).
+
+- `Submit Query`: once you have completed the above fields click this button to fetch transit times. You must click this button every time you wish to make a new query.
+
+The results will be summarised in a table as well as a Google Map below it showing the lcoation of the staions found within your search radius.
+
+
+Note:  Whilst this is aimed at London, it can be used for anywhere in the UK :)
+

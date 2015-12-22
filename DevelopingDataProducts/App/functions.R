@@ -5,7 +5,7 @@ geourl <- function(address, return.call = "json", sensor = "false") {
 }
 
 trainurl <- function(latlong, radius,return.call = "xml", sensor = "false") {
-  key="AIzaSyDmBvrskrDqqfJxFo4uazEthtvhOFz95Oc"
+  key="AIzaSyBGBMw3L-tQ4sxseGoafOT3ifeQLxB7B_0"
   root <- "https://maps.googleapis.com/maps/api/place/nearbysearch/"
   u <- paste(root, return.call, "?location=", latlong[1],",",latlong[2], "&region=uk","&radius=",radius,"&types=train_station|subway_station","&sensor=", sensor,"&key=",key,sep="")
   return(URLencode(u))
