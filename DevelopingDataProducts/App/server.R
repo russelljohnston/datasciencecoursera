@@ -50,7 +50,7 @@ shinyServer(function(input, output, session) {
     observe({updateTextInput(session, "commSt",value = loc())})
     
     
-    key <- "fzzfvsuf37rgy8k2vfruxcwd"
+    key <- "YOUR ZOOPLA KEY HERE"
     
     listing_status="rent"
     url="http://api.zoopla.co.uk/api/v1/property_listings.xml"
@@ -202,7 +202,7 @@ shinyServer(function(input, output, session) {
     from=gStations 
     to=commEnd()
     region="uk"
-    key="AIzaSyDi5gaiVz3Eq3xMg6ndUC5X3bhQLxY_F4w" 
+    key="YOUR GOOGLE KEY HERE" 
     url         <- "https://maps.googleapis.com/maps/api/distancematrix/xml"
     response    <- GET(url,query=list(origins=from,destinations=to,region=region,mode=mode,transit_mode=transit_mode,departure_time=dTime,key=key))
     doc         <- content(response,type="text/xml")
